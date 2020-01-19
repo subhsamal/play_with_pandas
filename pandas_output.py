@@ -7,13 +7,13 @@ df = pd.read_pickle('artwork.pickle')
 df_xlsx = df.iloc[:50, :].copy()
 
 # write to an single sheet excel file. install package openpyxl
-# df_xlsx.to_excel('artwork.xlsx', index=False)
-#
-# # write to excel with multiple work sheets. Install package xlsxwriter
-# writer = pd.ExcelWriter('multiplesheet_artist.xlsx', engine='xlsxwriter')
-# df_xlsx.to_excel(writer, sheet_name='small_df', index=False)
-# df.to_excel(writer, sheet_name='full_df', index=False)
-# writer.save()
+df_xlsx.to_excel('artwork.xlsx', index=False)
+
+# write to excel with multiple work sheets. Install package xlsxwriter
+writer = pd.ExcelWriter('multiplesheet_artist.xlsx', engine='xlsxwriter')
+df_xlsx.to_excel(writer, sheet_name='small_df', index=False)
+df.to_excel(writer, sheet_name='full_df', index=False)
+writer.save()
 
 
 ####### JSON #######
