@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 import os
-
+import pickle
 
 #### Read JSON using pandas from_records method ########
 
@@ -32,4 +32,7 @@ def get_record_from_json_file(sample_json, keys_to_use):
 
 
 json_df = read_json_files()
-print(json_df)
+
+# save as pickle
+json_df.to_pickle("dataframe.pickle")
+
