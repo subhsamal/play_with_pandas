@@ -3,19 +3,12 @@ import json
 import os
 
 
-####### pandas from_records method #######
+#### Read JSON using pandas from_records method ########
 
-# records = [("white chocolate mocha", "$4"),
-#            ("cookie crumble frappuchino", "$6")]
-#
-# records_df = pd.DataFrame.from_records(records, columns=["coffe", "price"])
-# print(records_df)
-
-#### Read JSON ########
 
 def read_json_files():
     root_dir = "/Users/sumusmac/Desktop/pandas-fundamentals/02/demos/demos/" \
-                         "collection-master/artworks/a"
+               "collection-master/artworks/a"
     keys_to_use = ['id', 'all_artists', 'title', 'medium', 'dateText', 'acquisitionYear', 'height', 'width', 'units']
     artwork = []
     for root, dirs, files in os.walk(root_dir):
@@ -24,6 +17,7 @@ def read_json_files():
                 record = get_record_from_json_file(os.path.join(root, f), keys_to_use)
                 artwork.append(record)
             break
+    # from_records takes a tuple and convert to dataframe
     df = pd.DataFrame.from_records(artwork, columns=keys_to_use, index='id')
     return df
 
