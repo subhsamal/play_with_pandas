@@ -130,3 +130,7 @@ dmypy.json
 
 .idea
 *.pickle
+
+*.db
+*.xlsx
+*.json
