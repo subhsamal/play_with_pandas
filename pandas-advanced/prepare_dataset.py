@@ -41,6 +41,5 @@ print(master_orig.head())
 # save the dataset to a pickle
 master_orig.to_pickle("Master.pickle")
 
-##########################################################
-##### Prepare the score.csv file #########################
+
 
